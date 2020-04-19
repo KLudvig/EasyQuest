@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="app.js"></script>
+   <link rel="stylesheet" type="text/css" href="../css/app.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey</title>
+</head>
+<body>
+    <ul class="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+<div id="questContainer" class="questContainer" style="padding-top: 1px"> 
+    <h1 style="color: #33beb0"><%= data.survey.name %></h1>
+    <form action="/survey/save" method="post" Content-Type='application/json'>
+        <input type="hidden" name="surveyID" value="<%= data.survey._id %>" /> <!-- hidden form to send survey ID to server -->
+        <ul style="list-style-type: none;text-align: left">
+        <% for (let i=0;i<data.survey.questions.length;i++) { %> 
+            <li>
+            <span class="questionTitle"><%= data.survey.questions[i].name %></span><br>
+            <input type="hidden" name="[questionID<%= [i] %>]questionID<%= [i] %>" value="<%= data.survey.questions[i]._id %>" />
+            <input required type="radio" id="answer1" value="answer1" name="[questionID<%= [i] %>]answer<%= [i] %>" style="margin-top: 5px"><label for="one" style="padding-left: 10px"><%= data.survey.questions[i].answer1.answer %></label><br>
+            <input type="radio" id="answer2" value="answer2" name="[questionID<%= [i] %>]answer<%= [i] %>"><label for="two" style="padding-left: 10px"><%= data.survey.questions[i].answer2.answer %></label><br>
+            <input type="radio" id="answer3" value="answer3" name="[questionID<%= [i] %>]answer<%= [i] %>"><label for="three" style="padding-left: 10px"><%= data.survey.questions[i].answer3.answer %></label><br>
+            </li>
+        <% } %>
+        </ul>  
+        <input type="submit" value="Submit" class="submitSurvey">
+    </form>
+</div>
+</body>
+</html> 

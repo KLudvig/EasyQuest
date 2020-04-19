@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="app.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/app.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Survey</title>
+</head>
+<body>
+    <ul class="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+<button id="buttonNewQuiz" class="buttonNewQuiz" onclick="newQuizButton()">Add new survey</button>
+<div class="addQuizContainer" id="addQuizContainer">
+    <input type="text" class="surveyName" id="surveyName" placeholder="Name your survey"><button id="addQuiz" class="addQuizB" onclick="newQuiz()">Add</button>
+</div>
+<h1></h1>
+<div id="emptyQuestion"></div>
+<div id="questContainer" class="questContainer hide"></div>
+<div style="text-align: center" id="finishButtonDiv" class="hide">
+    <button style="background-color: #fda7a7" type="button" onclick="location.href='/'">Finish</button>
+</div>
+<div class="listContainer">
+    <ul id="questList" style="list-style-type: none;text-align: left">
+        
+        <% for (let surveys of data.survey) { %> 
+        <li class="listItems a<%= surveys._id %>"><a href="/statistics/<%= surveys._id %>" class="listSurvey"><%= surveys.name %></a>
+        <button id="<%= surveys._id %>" class="listLink" onclick="deleteSurvey(this.id)"><img class="listImg" src="/images/trash.png"></button>
+        <button id="http://localhost:4444/survey/<%= surveys._id %>" onclick="popupShow(this.id)" class="listLink" style="margin-right: 21px"><img class="listImg" src="/images/share.png"></button>
+        </li>
+        <% } %>
+        
+    </ul>
+</div>
+
+<div id="popupBackground" class="popupBackground">
+    <div class="popup">
+    <span class="closePopup" onclick="closePopup()">&times;</span>
+    <span class="shareBoxTitle">Copy the link to share your survey!</span>
+    <div class="shareBox">
+    <input class="urlCopyInput" type="text" value="Hello World" id="urlToCopy">
+<button class="shareBoxCopyButton" onclick="copyUrl()">Copy</button>
+</div>
+</div>
+</div>
+
+</body>
+</html> 

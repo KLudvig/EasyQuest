@@ -1,0 +1,511 @@
+body {
+    font-family: arial;
+    background-color: #f3f8f8;
+    height: auto;
+}
+.hide {
+    display: none !important;
+}
+.show {
+    animation-name: openQ;
+    animation-duration: 1s;
+}
+@keyframes openQ {
+    from {transform: scale(0);}
+    to {transform: scale(1);}
+  }
+.xButton {
+    animation-name: changeB;
+    animation-duration: 1s;
+    width: 40px !important;
+    height: 40px;
+    background-color: #ffa7a7 !important;
+    color: #333333 !important;
+}
+@keyframes changeB {
+    from {width: 130px;background-color: #33bdb0;color: white;}
+    to {width: 40px;
+    height: 40px;
+    background-color: #ffa7a7;
+    color: #333333;}
+}
+#buttonNew {
+    background-color: #33bdb0;
+    padding: 10px;
+    border-radius: 3px;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    margin: auto;
+    margin-top: 40px;
+    display: block;
+    width: 130px;
+}
+#qName {
+    font-size: 16px;
+    padding: 8px;
+    border-radius: 0PX;
+    border: none;
+    width: 90%;
+    max-width: 300px;
+    border-bottom: 1px solid #dddddd;
+    text-align: center;
+    margin-bottom: 60px;
+}
+.answer {
+    border: none;
+    border-bottom: 1px solid #dddddd;
+    padding: 15px;
+    padding-left: 5px;
+    font-size: 14px;
+    width: 80%;
+    max-width: 300px;
+}
+input[type='radio'] {
+    margin-top: 30px;
+}
+input[type='radio']:checked:after {
+    width: 14px;
+    height: 14px;
+    left: -3px;
+    top: -2px;
+    background-color: green;
+    display: inline-block;
+    border-radius: 15px;
+    position: relative;
+    background-color: #fea7a7;
+    content: '';
+    border: 2px solid white;
+}
+#newQuestion {
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    padding: 7%;
+    max-width: 350px;
+    margin: auto;
+    text-align: center;
+    margin-top: 20px;
+}
+ul {
+    padding-inline-start: 0px;
+}
+.buttonAdd {
+    background-color: #33bdb0;
+    width: 110px;
+    padding: 10px;
+    border-radius: 3px;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    margin-top: 40px;
+    margin: auto;
+}
+input:focus {
+    outline: none;
+}
+.questContainer {
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    padding: 7%;
+    max-width: 350px;
+    margin: auto;
+    text-align: center;
+    margin-top: 20px;
+}
+.hideQC {
+    opacity: 0;
+}
+.buttonNewQuiz {
+    background-color: #33bdb0;
+    padding: 10px;
+    border-radius: 3px;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgb(212, 212, 212);
+    margin: auto;
+    margin-top: 40px;
+    display: block;
+    width: 150px;
+}
+.addQuizB {
+    background-color: #33bdb0;
+    padding: 10px;
+    border-radius: 3px;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    margin: 0;
+    width: 60px;
+}
+input.surveyName {
+    height: 35px;
+    margin-right: 5px;
+    border-radius: 3px;
+    border: 1px solid #e6e6e6;
+    font-size: 16px;
+    padding-left: 8px;
+    padding-right: 8px;
+    font-family: arial;
+}
+.addQuizContainer {
+    display: none;
+    justify-content: center;
+    padding-top: 40px;
+}
+.aniAddQuiz {
+    animation-name: showAddQ;
+    animation-duration: 1s;
+    display: flex;
+}
+@keyframes showAddQ {
+    from {transform: scale(0);}
+    to {transform: scale(1);}
+  }
+.hideQuizButton {
+    margin-top: -60px;
+    animation-name: hideQB;
+    animation-duration: 1s;
+}
+@keyframes hideQB {
+    from {margin-top: 40px;transform: scale(1)}
+    to {margin-top:-60px;transform: scale(0.3)}
+  }
+  h1 {
+    text-align: center;
+    color: #333333;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: 40px;
+}
+.listItems {
+    font-weight: 600;
+    border: 1px solid #e6e6e6;
+    padding: 20px;
+    color: #33bdb0;
+    margin: 5px;
+    border-radius: 3px;
+    background-color: white;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.listItems::first-letter {
+    text-transform: uppercase;
+}
+.listItems:hover {
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);
+    transform: scale(1.03);
+}
+.listLink {
+    float: right;
+    margin-left: 25px;
+    background-color: transparent;
+    box-shadow: none;
+    margin: 0;
+    width: 20px;
+    padding: 0px;
+}
+.listLink:hover {
+    box-shadow: none;
+}
+.listImg {
+    width: 17px;
+    height: 18px;
+    cursor: pointer;
+}
+.listImg:hover {
+    transform: scale(1.4);
+}
+.listSurvey {
+    color: #33bdb0;
+    text-decoration: none;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+.hideList {
+    animation-name: hideL;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+@keyframes hideL {
+    from {opacity: 1;}
+    to {transform: translate(-200%); opacity: 0; display: none;}
+  }
+  button {
+    background-color: #33bdb0;
+    width: 130px;
+    padding: 10px;
+    border-radius: 3px;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    margin: auto;
+    margin-top: 40px;
+    font-size: 16px;
+    border: none;
+}
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px 0 rgb(51, 190, 176);
+}
+button:focus{ 
+    outline:none; 
+}
+.questionTitle {
+    display: block;
+    font-weight: 600;
+    padding: 8px;
+    padding-top: 40px;
+    border-bottom: solid 1px #d2d2d2;
+    text-align: center;
+    color: #333333;
+}
+.popupBackground {
+    background-color: rgba(0,0,0,0.6);
+    backdrop-filter: blur(6px);
+    opacity: 60;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+  display: none;
+}
+.popup {
+    background-color: white;
+    margin: auto;
+    padding: 20px;
+    width: 100%;
+    border-radius: 3px;
+    max-width: 250px;
+}
+.closePopup {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: -8px;
+    cursor: pointer;
+  }
+  .shareBox {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+.shareBoxTitle {
+    text-align: center;
+    display: block;
+    margin-top: 30px;
+}
+.shareBoxCopyButton {
+padding: 7px;
+    box-shadow: none;
+    background-color: #fea7a7;
+    margin-top: 1px;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    margin-left: -5px;
+    width: 40%;
+}
+button.shareBoxCopyButton:hover {
+    box-shadow: none;
+}
+.urlCopyInput {
+    border: none;
+    border-radius: 3px;
+    padding: 10px;
+    background-color: #f3f2f2;
+    width: 60%;
+}
+.submitSurvey {
+    background-color: #33bdb0;
+    width: 130px;
+    padding: 10px;
+    border-radius: 3px;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    margin: auto;
+    margin-top: 40px;
+    font-size: 16px;
+    border: none;
+    margin-bottom: 20px;
+}
+.submitSurvey:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px 0 rgb(51, 190, 176);
+}
+.spanStats {
+    display: inline-block;
+    margin-top: -8px;
+    text-align: left;
+}
+.qtyStats {
+text-align: center;
+    width: 20%;
+    padding-right: 5%;
+    font-size: 14px;
+    color: #b7b7b7;
+}
+.qtyStats > span {
+font-weight:600;
+font-size: 18px;
+color:#333333
+}
+.statsContainer {
+        background-color: white;
+        border-radius: 4px;
+        padding: 10px;
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+        display: inline-block;
+        margin: 10px;
+        width: 20%;
+        min-width: 260px;
+}
+.spanScore {
+    display: inline-block;
+    width: 30%;
+}
+.statsBox {
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+}
+.numbOfResp {
+    padding-top: 5px;
+    margin-top: -20px;
+}
+.statTitle {
+display: inline-block;
+border-bottom: 1px solid #333333;
+color: #33beb0
+}
+i {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+  }
+.backArrow {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+  }
+  .backButton {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 0px;
+    padding-left: 13px;
+    margin: 15px;
+  }
+
+  /* For background moving blocks */
+  .circles{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+.circles li{
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: #33beb0;
+    animation: animate 25s linear infinite;
+    bottom: -150px;
+}
+.circles li:nth-child(1){
+    left: 25%;
+    width: 40px;
+    height: 40px;
+    animation-delay: 0s;
+}
+.circles li:nth-child(2){
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+.circles li:nth-child(3){
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+}
+.circles li:nth-child(4){
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+.circles li:nth-child(5){
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+}
+.circles li:nth-child(6){
+    left: 75%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 3s;
+}
+.circles li:nth-child(7){
+    left: 35%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 7s;
+}
+.circles li:nth-child(8){
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+}
+.circles li:nth-child(9){
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+}
+.circles li:nth-child(10){
+    left: 85%;
+    width: 100px;
+    height: 100px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+@keyframes animate {
+    0%{ transform: translateY(0) rotate(0deg);
+        opacity: 0.8;
+        border-radius: 5%;}
+    100%{
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;}
+}

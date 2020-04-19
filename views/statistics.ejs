@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="app.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/app.css" />
+    <link rel="stylesheet" type="text/css" href="../css/circle.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey</title>
+</head>
+<body>
+    <ul class="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+<button class="backButton"><i class="backArrow" onclick="javascript:history.back()"></i></button>
+
+<div style="text-align: center"> 
+    <h1 class="statTitle"><%= data.survey.name %></h1>
+    <p class="numbOfResp"><%= data.survey.questions[0].answer1.score + data.survey.questions[0].answer2.score + data.survey.questions[0].answer3.score%> respondents</p>
+        
+    <% for (let i=0;i<data.survey.questions.length;i++) { %> 
+    <div class="statsContainer">
+        <span class="questionTitle"><%= data.survey.questions[i].name%></span><br>
+        <div class="statsBox">
+            <div>
+                <div class="c100 p<%= Math.round((data.survey.questions[i].answer1.score / (data.survey.questions[i].answer1.score+data.survey.questions[i].answer2.score+data.survey.questions[i].answer3.score)) * 100)%> small">
+                    <span><%= Math.round((data.survey.questions[i].answer1.score / (data.survey.questions[i].answer1.score+data.survey.questions[i].answer2.score+data.survey.questions[i].answer3.score)) * 100) + '%' %></span>
+                    <div class="slice">
+                        <div class="bar"></div>
+                        <div class="fill"></div>
+                    </div>
+                </div>
+            </div> 
+            <span class="spanStats qtyStats"><span><%= data.survey.questions[i].answer1.score %></span><br>Resp</span>
+            <span class="spanStats"><%= data.survey.questions[i].answer1.answer %></span>
+        </div>
+                   
+        <div class="statsBox">
+            <div>
+                <div class="c100 p<%= Math.round((data.survey.questions[i].answer2.score / (data.survey.questions[i].answer1.score+data.survey.questions[i].answer2.score+data.survey.questions[i].answer3.score)) * 100)%> small">
+                    <span><%= Math.round((data.survey.questions[i].answer2.score / (data.survey.questions[i].answer1.score+data.survey.questions[i].answer2.score+data.survey.questions[i].answer3.score)) * 100) + '%' %></span>
+                    <div class="slice">
+                        <div class="bar"></div>
+                        <div class="fill"></div>
+                    </div>
+                </div>
+            </div> 
+            <span class="spanStats qtyStats"><span><%= data.survey.questions[i].answer2.score %></span><br>Resp</span>
+            <span class="spanStats"><%= data.survey.questions[i].answer2.answer %></span>
+        </div>
+
+        <div class="statsBox">
+            <div>
+                <div class="c100 p<%= Math.round((data.survey.questions[i].answer3.score / (data.survey.questions[i].answer1.score+data.survey.questions[i].answer2.score+data.survey.questions[i].answer3.score)) * 100)%> small">
+                    <span><%= Math.round((data.survey.questions[i].answer3.score / (data.survey.questions[i].answer1.score+data.survey.questions[i].answer2.score+data.survey.questions[i].answer3.score)) * 100) + '%' %></span>
+                    <div class="slice">
+                        <div class="bar"></div>
+                        <div class="fill"></div>
+                    </div>
+                </div>
+            </div> 
+            <span class="spanStats qtyStats"><span><%= data.survey.questions[i].answer3.score %></span><br>Resp</span>
+            <span class="spanStats"><%= data.survey.questions[i].answer3.answer %></span>
+        </div>
+    </div>
+    <% } %>
+
+</div>
+</body>
+</html> 
