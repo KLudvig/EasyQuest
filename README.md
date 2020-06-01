@@ -3,7 +3,7 @@ Easy to use Survey system. Lets you add and share surveys and analyze statistics
 
 # Install
 
-First, install all dependency files:
+First, install all dependencies:
 ```
 npm install
 ```
