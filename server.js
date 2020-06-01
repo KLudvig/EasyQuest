@@ -1,10 +1,11 @@
 //Add Express, Mongoose etc.
 const express = require("express");
 const app = express();
-const port = process.env.port || 4444; 
+const port = process.env.port || 3000; 
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const Survey = require("./api/models/survey"); 
+require("dotenv").config();
 
 //Import routes
 const survey = require("./api/routes/survey"); 
@@ -20,7 +21,7 @@ app.use("/home", home);
 app.use("/statistics", statistics);
 
 //Connect to MongoDB and check if database is connected
-const url = 'mongodb://127.0.0.1:27017/easyquest'
+const url = process.env.MONGO_DB
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
 const db = mongoose.connection
 db.once('open', _ => {

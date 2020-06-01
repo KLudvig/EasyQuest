@@ -7,14 +7,14 @@ First, install all dependency files:
 ```
 npm install
 ```
-Then, in the server.js file, change line 23 to your MongoDB database name:
+Then, add your database in the .env_sample file, and rename the file to .env
 ```
-const url = 'mongodb://127.0.0.1:27017/easyquest'
+MONGO_DB='YOUR_DATABASE_HERE'
 ```
+Database example: "mongodb://127.0.0.1:27017/easyquest"
 # Run
 Run the application by typing:
 ```
 npm run devStart
 ```
-This will start the application with nodemon on port 4444.
-# Have a nice day!
+This will start the application with nodemon on port 3000.
